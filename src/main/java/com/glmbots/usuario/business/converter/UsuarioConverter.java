@@ -137,4 +137,24 @@ public class UsuarioConverter {
                 .build();
     }
 
+    public Endereco paraEndereco(EnderecoDTO enderecoDTO, Long idUsuario){
+        return Endereco.builder()
+                .rua(enderecoDTO.getRua())
+                .numero(enderecoDTO.getNumero())
+                .complemento(enderecoDTO.getComplemento())
+                .cidade(enderecoDTO.getCidade())
+                .estado(enderecoDTO.getEstado())
+                .cep(enderecoDTO.getCep())
+                .usuario_id(idUsuario)
+                .build();
+    }
+
+    public Telefone paraTelefone(TelefoneDTO telefoneDTO, Long idUsuario){
+        return Telefone.builder()
+                .ddd(telefoneDTO.getDdd())
+                .numero(telefoneDTO.getNumero())
+                .usuario_id(idUsuario)
+                .build();
+    }
+
 }
